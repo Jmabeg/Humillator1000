@@ -1,0 +1,27 @@
+{
+  "applications": "*",
+  "changelogDate": "20220826165104",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "club_role",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ClubRole",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "userHasClub",
+      "otherEntityRelationshipName": "role",
+      "relationshipName": "userHasClub",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

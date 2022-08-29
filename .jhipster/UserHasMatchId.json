@@ -1,0 +1,24 @@
+{
+  "applications": "*",
+  "changelogDate": "20220826165105",
+  "dto": "no",
+  "embedded": true,
+  "entityTableName": "user_has_match_id",
+  "fields": [
+    {
+      "fieldName": "userId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "matchId",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "UserHasMatchId",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

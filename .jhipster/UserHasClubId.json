@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20220826165107",
+  "dto": "no",
+  "embedded": true,
+  "entityTableName": "user_has_club_id",
+  "fields": [
+    {
+      "fieldName": "userId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "clubId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "roleId",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "UserHasClubId",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

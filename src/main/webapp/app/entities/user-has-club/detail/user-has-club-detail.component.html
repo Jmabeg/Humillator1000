@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="userHasClub">
+      <h2 data-cy="userHasClubDetailsHeading"><span>User Has Club</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ userHasClub.id }}</span>
+        </dd>
+        <dt><span>Rating</span></dt>
+        <dd>
+          <span>{{ userHasClub.rating }}</span>
+        </dd>
+        <dt><span>Club</span></dt>
+        <dd>
+          <div *ngIf="userHasClub.club">
+            <a [routerLink]="['/club', userHasClub.club.id, 'view']">{{ userHasClub.club?.id }}</a>
+          </div>
+        </dd>
+        <dt><span>Role</span></dt>
+        <dd>
+          <div *ngIf="userHasClub.role">
+            <a [routerLink]="['/club-role', userHasClub.role.id, 'view']">{{ userHasClub.role?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/user-has-club', userHasClub.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

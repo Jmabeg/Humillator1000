@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20220826165108",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "user_has_club",
+  "fields": [
+    {
+      "fieldName": "rating",
+      "fieldType": "Float"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "UserHasClub",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "club",
+      "otherEntityRelationshipName": "userHasClub",
+      "relationshipName": "club",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "clubRole",
+      "otherEntityRelationshipName": "userHasClub",
+      "relationshipName": "role",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

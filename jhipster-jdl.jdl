@@ -1,0 +1,98 @@
+
+entity Club {
+    name String
+}
+
+entity Match {
+    startingDate LocalDate,
+    endingDate LocalDate,
+    description String,
+    title String,
+    title String,
+    delete Boolean
+}
+
+entity Role {
+    name String
+}
+
+entity Season {
+	name String,
+	startingDate LocalDate,
+    endingDate LocalDate
+}
+
+entity Notification {
+    minutes Integer,
+    isNotified Boolean
+}
+
+entity ClubRole {
+    name String
+}
+
+@embedded
+entity UserHasMatchId {
+	userId Integer,
+    matchId Integer
+}
+
+entity UserHasMatch {
+	isOwner Boolean,
+    mark Integer
+}
+
+
+@embedded
+entity UserHasClubId {
+	userId Integer,
+    clubId Integer,
+    roleId Integer
+}
+
+entity UserHasClub {
+	rating Float
+}
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+relationship ManyToOne {
+	Match{club} to Club{match}
+}
+
+
+relationship OneToMany {
+	ClubRole{userHasClub} to UserHasClub{role}
+}
+
+relationship OneToMany {
+	Season{match} to Match{season}
+}
+
+relationship ManyToOne {
+	UserHasClub{club} to Club{userHasClub},
+	UserHasMatch{match} to Match{userHasMatch}
+}
+
+relationship OneToMany {
+	UserHasMatch{notification} to Notification{userHasMatch}
+}
+
+// defining multiple oneToOne relationships
+
+
+// Set pagination options
+// paginate all with infinite-scroll
+paginate all with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

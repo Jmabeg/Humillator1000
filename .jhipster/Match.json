@@ -1,0 +1,55 @@
+{
+  "applications": "*",
+  "changelogDate": "20220826165100",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "jhi_match",
+  "fields": [
+    {
+      "fieldName": "startingDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endingDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "delete",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Match",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "club",
+      "otherEntityRelationshipName": "match",
+      "relationshipName": "club",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "season",
+      "otherEntityRelationshipName": "match",
+      "relationshipName": "season",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "userHasMatch",
+      "otherEntityRelationshipName": "match",
+      "relationshipName": "userHasMatch",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

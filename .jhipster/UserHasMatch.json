@@ -1,0 +1,37 @@
+{
+  "applications": "*",
+  "changelogDate": "20220826165106",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "user_has_match",
+  "fields": [
+    {
+      "fieldName": "isOwner",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "mark",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "UserHasMatch",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "notification",
+      "otherEntityRelationshipName": "userHasMatch",
+      "relationshipName": "notification",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "match",
+      "otherEntityRelationshipName": "userHasMatch",
+      "relationshipName": "match",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

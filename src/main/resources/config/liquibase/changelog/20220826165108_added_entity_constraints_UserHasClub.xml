@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity UserHasClub.
+    -->
+    <changeSet id="20220826165108-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="club_id"
+                                 baseTableName="user_has_club"
+                                 constraintName="fk_user_has_club__club_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="club"/>
+
+        <addForeignKeyConstraint baseColumnNames="role_id"
+                                 baseTableName="user_has_club"
+                                 constraintName="fk_user_has_club__role_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="club_role"/>
+    </changeSet>
+</databaseChangeLog>

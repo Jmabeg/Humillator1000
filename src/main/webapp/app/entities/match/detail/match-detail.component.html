@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="match">
+      <h2 data-cy="matchDetailsHeading"><span>Match</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ match.id }}</span>
+        </dd>
+        <dt><span>Starting Date</span></dt>
+        <dd>
+          <span>{{ match.startingDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Ending Date</span></dt>
+        <dd>
+          <span>{{ match.endingDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Description</span></dt>
+        <dd>
+          <span>{{ match.description }}</span>
+        </dd>
+        <dt><span>Title</span></dt>
+        <dd>
+          <span>{{ match.title }}</span>
+        </dd>
+        <dt><span>Delete</span></dt>
+        <dd>
+          <span>{{ match.delete }}</span>
+        </dd>
+        <dt><span>Club</span></dt>
+        <dd>
+          <div *ngIf="match.club">
+            <a [routerLink]="['/club', match.club.id, 'view']">{{ match.club?.id }}</a>
+          </div>
+        </dd>
+        <dt><span>Season</span></dt>
+        <dd>
+          <div *ngIf="match.season">
+            <a [routerLink]="['/season', match.season.id, 'view']">{{ match.season?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/match', match.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

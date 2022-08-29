@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20220826165059",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "club",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Club",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "match",
+      "otherEntityRelationshipName": "club",
+      "relationshipName": "match",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "userHasClub",
+      "otherEntityRelationshipName": "club",
+      "relationshipName": "userHasClub",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

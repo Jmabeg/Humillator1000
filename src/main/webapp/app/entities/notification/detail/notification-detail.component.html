@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="notification">
+      <h2 data-cy="notificationDetailsHeading"><span>Notification</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ notification.id }}</span>
+        </dd>
+        <dt><span>Minutes</span></dt>
+        <dd>
+          <span>{{ notification.minutes }}</span>
+        </dd>
+        <dt><span>Is Notified</span></dt>
+        <dd>
+          <span>{{ notification.isNotified }}</span>
+        </dd>
+        <dt><span>User Has Match</span></dt>
+        <dd>
+          <div *ngIf="notification.userHasMatch">
+            <a [routerLink]="['/user-has-match', notification.userHasMatch.id, 'view']">{{ notification.userHasMatch?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/notification', notification.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

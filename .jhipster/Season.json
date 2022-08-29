@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20220826165102",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "season",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "startingDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endingDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Season",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "match",
+      "otherEntityRelationshipName": "season",
+      "relationshipName": "match",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

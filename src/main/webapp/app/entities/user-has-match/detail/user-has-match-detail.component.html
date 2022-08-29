@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="userHasMatch">
+      <h2 data-cy="userHasMatchDetailsHeading"><span>User Has Match</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ userHasMatch.id }}</span>
+        </dd>
+        <dt><span>Is Owner</span></dt>
+        <dd>
+          <span>{{ userHasMatch.isOwner }}</span>
+        </dd>
+        <dt><span>Mark</span></dt>
+        <dd>
+          <span>{{ userHasMatch.mark }}</span>
+        </dd>
+        <dt><span>Match</span></dt>
+        <dd>
+          <div *ngIf="userHasMatch.match">
+            <a [routerLink]="['/match', userHasMatch.match.id, 'view']">{{ userHasMatch.match?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/user-has-match', userHasMatch.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

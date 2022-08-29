@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20220826165103",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "notification",
+  "fields": [
+    {
+      "fieldName": "minutes",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isNotified",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Notification",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "userHasMatch",
+      "otherEntityRelationshipName": "notification",
+      "relationshipName": "userHasMatch",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
